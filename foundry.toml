@@ -3,4 +3,11 @@ src = 'src'
 out = 'out'
 libs = ['lib']
 
+[profile.default.model_checker]
+contracts = {'test/formal-verification/BinaryMachineInvariants.sol' = ['BinaryMachineInvariants'], 'src/LazyCounter.sol' = ['LazyCounter'], 'test/formal-verification/CounterInvariants.sol' = ['CounterInvariants']}
+engine = 'chc'
+timeout = 10000
+targets = ['assert']
+
+
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config
